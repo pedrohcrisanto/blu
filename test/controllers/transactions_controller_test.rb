@@ -17,7 +17,7 @@ class TransactionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create transaction" do
     assert_difference('Transaction.count') do
-      post transactions_url, params: { transaction: { card: @transaction.card, cpf: @transaction.cpf, date: @transaction.date, hour: @transaction.hour, store_id: @transaction.store_id, type_id: @transaction.type_id, value: @transaction.value } }
+      post transactions_url, params: { transaction: { card: @transaction.card, cpf: @transaction.cpf, date: @transaction.date, hour: @transaction.hour, store_name: @transaction.store_name, store_owner: @transaction.store_owner, type_id: @transaction.type_id, value: @transaction.value } }
     end
 
     assert_redirected_to transaction_url(Transaction.last)
@@ -34,7 +34,7 @@ class TransactionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update transaction" do
-    patch transaction_url(@transaction), params: { transaction: { card: @transaction.card, cpf: @transaction.cpf, date: @transaction.date, hour: @transaction.hour, store_id: @transaction.store_id, type_id: @transaction.type_id, value: @transaction.value } }
+    patch transaction_url(@transaction), params: { transaction: { card: @transaction.card, cpf: @transaction.cpf, date: @transaction.date, hour: @transaction.hour, store_name: @transaction.store_name, store_owner: @transaction.store_owner, type_id: @transaction.type_id, value: @transaction.value } }
     assert_redirected_to transaction_url(@transaction)
   end
 

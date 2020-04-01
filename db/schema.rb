@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_01_133956) do
+ActiveRecord::Schema.define(version: 2020_04_01_135729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,16 +36,10 @@ ActiveRecord::Schema.define(version: 2020_04_01_133956) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "stores", force: :cascade do |t|
-    t.string "name"
-    t.string "owner"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "transactions", force: :cascade do |t|
     t.bigint "type_id"
-    t.bigint "store_id"
+    t.string "store_owner"
+    t.string "store_name"
     t.date "date"
     t.float "value"
     t.string "cpf"
@@ -53,7 +47,6 @@ ActiveRecord::Schema.define(version: 2020_04_01_133956) do
     t.time "hour"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["store_id"], name: "index_transactions_on_store_id"
     t.index ["type_id"], name: "index_transactions_on_type_id"
   end
 
@@ -66,6 +59,5 @@ ActiveRecord::Schema.define(version: 2020_04_01_133956) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "transactions", "stores"
   add_foreign_key "transactions", "types"
 end

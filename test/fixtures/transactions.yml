@@ -2,18 +2,20 @@
 
 one:
   type: one
-  store: one
+  store_owner: MyString
+  store_name: MyString
   date: 2020-04-01
   value: 1.5
   cpf: MyString
   card: MyString
-  hour: 2020-04-01 13:38:26
+  hour: 2020-04-01 13:57:29
 
 two:
   type: two
-  store: two
+  store_owner: MyString
+  store_name: MyString
   date: 2020-04-01
   value: 1.5
   cpf: MyString
   card: MyString
-  hour: 2020-04-01 13:38:26
+  hour: 2020-04-01 13:57:29

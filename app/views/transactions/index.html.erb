@@ -6,7 +6,8 @@
   <thead>
     <tr>
       <th>Type</th>
-      <th>Store</th>
+      <th>Store owner</th>
+      <th>Store name</th>
       <th>Date</th>
       <th>Value</th>
       <th>Cpf</th>
@@ -20,7 +21,8 @@
     <% @transactions.each do |transaction| %>
       <tr>
         <td><%= transaction.type %></td>
-        <td><%= transaction.store %></td>
+        <td><%= transaction.store_owner %></td>
+        <td><%= transaction.store_name %></td>
         <td><%= transaction.date %></td>
         <td><%= transaction.value %></td>
         <td><%= transaction.cpf %></td>

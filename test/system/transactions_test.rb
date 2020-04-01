@@ -18,7 +18,8 @@ class TransactionsTest < ApplicationSystemTestCase
     fill_in "Cpf", with: @transaction.cpf
     fill_in "Date", with: @transaction.date
     fill_in "Hour", with: @transaction.hour
-    fill_in "Store", with: @transaction.store_id
+    fill_in "Store name", with: @transaction.store_name
+    fill_in "Store owner", with: @transaction.store_owner
     fill_in "Type", with: @transaction.type_id
     fill_in "Value", with: @transaction.value
     click_on "Create Transaction"
@@ -35,7 +36,8 @@ class TransactionsTest < ApplicationSystemTestCase
     fill_in "Cpf", with: @transaction.cpf
     fill_in "Date", with: @transaction.date
     fill_in "Hour", with: @transaction.hour
-    fill_in "Store", with: @transaction.store_id
+    fill_in "Store name", with: @transaction.store_name
+    fill_in "Store owner", with: @transaction.store_owner
     fill_in "Type", with: @transaction.type_id
     fill_in "Value", with: @transaction.value
     click_on "Update Transaction"
