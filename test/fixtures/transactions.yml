@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: one
+  store: one
+  date: 2020-04-01
+  value: 1.5
+  cpf: MyString
+  card: MyString
+  hour: 2020-04-01 13:38:26
+
+two:
+  type: two
+  store: two
+  date: 2020-04-01
+  value: 1.5
+  cpf: MyString
+  card: MyString
+  hour: 2020-04-01 13:38:26

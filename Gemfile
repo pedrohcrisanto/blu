@@ -15,7 +15,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -53,6 +54,8 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
+  gem 'rspec-rails', '~> 4.0.0'
+  gem 'factory_bot'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
