@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# client = Client.create!(name: "Contabill", transactions_attributes: [
+#     type_transaction: "1", nature: "Entrada", store_owner:"Pedro", store_name:"Loja", date: DateTime.now, value: 1233 , cpf:"123123", card:"BB", hour: Time.now
+#   ])
+
+
+  params = { client: {
+ name: 'lorem ipsum?',
+ transactions_attributes: [
+ { type_transaction: "1", nature: "Entrada", store_owner:"Pedro", store_name:"Loja", date: DateTime.now, value: 1233 , cpf:"123123", card:"BB", hour: Time.now},
+ { type_transaction: "1", nature: "Saida", store_owner:"Pedro2", store_name:"Loja", date: DateTime.now, value: 1233 , cpf:"123123", card:"BB", hour: Time.now},
+ { type_transaction: "1", nature: "Entrada", store_owner:"Pedro3", store_name:"Loja", date: DateTime.now, value: 1233 , cpf:"123123", card:"BB", hour: Time.now} ]
+}}
+client = Client.create!(params[:client])
+client.transactions

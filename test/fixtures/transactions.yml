@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: 
+  type_transaction: MyString
   nature: MyString
   store_owner: MyString
   store_name: MyString
@@ -9,10 +9,11 @@ one:
   value: 1.5
   cpf: MyString
   card: MyString
-  hour: 2020-04-06 13:55:15
+  hour: 2020-04-06 14:46:31
+  client: one
 
 two:
-  type: 
+  type_transaction: MyString
   nature: MyString
   store_owner: MyString
   store_name: MyString
@@ -20,4 +21,5 @@ two:
   value: 1.5
   cpf: MyString
   card: MyString
-  hour: 2020-04-06 13:55:15
+  hour: 2020-04-06 14:46:31
+  client: two

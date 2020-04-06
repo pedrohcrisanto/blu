@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_06_135534) do
+ActiveRecord::Schema.define(version: 2020_04_06_144631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_04_06_135534) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.string "type"
+    t.string "type_transaction"
     t.string "nature"
     t.string "store_owner"
     t.string "store_name"
@@ -52,9 +52,12 @@ ActiveRecord::Schema.define(version: 2020_04_06_135534) do
     t.string "cpf"
     t.string "card"
     t.time "hour"
+    t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_transactions_on_client_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "transactions", "clients"
 end

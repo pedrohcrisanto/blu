@@ -15,13 +15,14 @@ class TransactionsTest < ApplicationSystemTestCase
     click_on "New Transaction"
 
     fill_in "Card", with: @transaction.card
+    fill_in "Client", with: @transaction.client_id
     fill_in "Cpf", with: @transaction.cpf
     fill_in "Date", with: @transaction.date
     fill_in "Hour", with: @transaction.hour
     fill_in "Nature", with: @transaction.nature
     fill_in "Store name", with: @transaction.store_name
     fill_in "Store owner", with: @transaction.store_owner
-    fill_in "Type", with: @transaction.type
+    fill_in "Type transaction", with: @transaction.type_transaction
     fill_in "Value", with: @transaction.value
     click_on "Create Transaction"
 
@@ -34,13 +35,14 @@ class TransactionsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Card", with: @transaction.card
+    fill_in "Client", with: @transaction.client_id
     fill_in "Cpf", with: @transaction.cpf
     fill_in "Date", with: @transaction.date
     fill_in "Hour", with: @transaction.hour
     fill_in "Nature", with: @transaction.nature
     fill_in "Store name", with: @transaction.store_name
     fill_in "Store owner", with: @transaction.store_owner
-    fill_in "Type", with: @transaction.type
+    fill_in "Type transaction", with: @transaction.type_transaction
     fill_in "Value", with: @transaction.value
     click_on "Update Transaction"
 

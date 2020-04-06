@@ -15,6 +15,7 @@ class ClientsController < ApplicationController
   # GET /clients/new
   def new
     @client = Client.new
+    @client.transactions.build
   end
 
   # GET /clients/1/edit
@@ -70,7 +71,7 @@ class ClientsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def client_params
       params.require(:client).permit(:name, :file, transactions_attributes: [
-        :type, :nature, :store_owner, :store_name, :date, :value, :cpf, :card, :hour
+        :id, :type_transaction, :nature, :store_owner, :store_name, :date, :value, :cpf, :card, :hour, :_destroy
       ])
     end
 end
