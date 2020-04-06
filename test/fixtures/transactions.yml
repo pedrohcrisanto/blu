@@ -1,21 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: one
+  type: 
+  nature: MyString
   store_owner: MyString
   store_name: MyString
-  date: 2020-04-01
+  date: 2020-04-06
   value: 1.5
   cpf: MyString
   card: MyString
-  hour: 2020-04-01 13:57:29
+  hour: 2020-04-06 13:55:15
 
 two:
-  type: two
+  type: 
+  nature: MyString
   store_owner: MyString
   store_name: MyString
-  date: 2020-04-01
+  date: 2020-04-06
   value: 1.5
   cpf: MyString
   card: MyString
-  hour: 2020-04-01 13:57:29
+  hour: 2020-04-06 13:55:15

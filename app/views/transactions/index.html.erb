@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Type</th>
+      <th>Nature</th>
       <th>Store owner</th>
       <th>Store name</th>
       <th>Date</th>
@@ -21,6 +22,7 @@
     <% @transactions.each do |transaction| %>
       <tr>
         <td><%= transaction.type %></td>
+        <td><%= transaction.nature %></td>
         <td><%= transaction.store_owner %></td>
         <td><%= transaction.store_name %></td>
         <td><%= transaction.date %></td>
