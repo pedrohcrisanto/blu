@@ -1,11 +1,12 @@
 class Client < ApplicationRecord
-    has_many :transactions
+    has_many :transactions, dependent: :destroy
     accepts_nested_attributes_for :transactions, allow_destroy: true
     has_one_attached :file
     after_create :save_bd
     after_create :set_nature
     after_create :set_type_transaction
     after_create :set_balance
+    
     def set_balance
       total_entry = 0
       total_output = 0
@@ -19,6 +20,7 @@ class Client < ApplicationRecord
       end
       self.update(balance: total_entry - total_output)
     end
+    
     def set_nature
       self.transactions.each do |transaction|
         case transaction.type_transaction
