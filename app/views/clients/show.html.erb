@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <div class="container">
     <ul class="list-group">
             <h2 class="text-center">Detalhes das Transações<h2>
@@ -15,49 +14,49 @@
 </li>
 <li class="list-group-item">
 <p>
-  <strong>Nature:</strong>
+  <strong>Natureza:</strong>
     <%= transaction.nature %>
 </p>
 </li>
 <li class="list-group-item">
 <p>
-  <strong>Store owner:</strong>
+  <strong>Dono da Loja:</strong>
   <%= transaction.store_owner %>
 </p>
 </li>
 <li class="list-group-item">
 <p>
-  <strong>Store name:</strong>
+  <strong>Nome da Loja:</strong>
   <%= transaction.store_name %>
 </p>
 </li>
 <li class="list-group-item">
 <p>
-  <strong>Date:</strong>
+  <strong>Data:</strong>
   <%= transaction.date %>
 </p>
 </li>
 <li class="list-group-item">
 <p>
-  <strong>Value:</strong>
+  <strong>Valor:</strong>
   <%= transaction.value %>
 </p>
 </li>
 <li class="list-group-item">
 <p>
-  <strong>Cpf:</strong>
+  <strong>CPF:</strong>
   <%= transaction.cpf %>
 </p>
 </li>
 <li class="list-group-item">
 <p>
-  <strong>Card:</strong>
+  <strong>Cartão:</strong>
   <%= transaction.card %>
 </p>
 </li>
 <li class="list-group-item">
 <p>
-  <strong>Hour:</strong>
+  <strong>Hora:</strong>
   <%= transaction.hour %>
 </p>
 </li>
@@ -67,7 +66,6 @@
 
 </ul>
 <br>
-<%= link_to 'Editar', edit_client_path(@client) %> |
 <%= link_to 'Voltar', clients_path %>
 </div>
 
