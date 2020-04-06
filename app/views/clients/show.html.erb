@@ -1,9 +1,56 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Transações</h1>
+<% @client.transactions.each do |transaction| %>
+
+<h2><strong> Transação <%=transaction.id %></strong></h2>
 <p>
-  <strong>Name:</strong>
-  <%= @client.read_txt %>
+  <strong>Type transaction:</strong>
+  <%= @client.type_transaction(transaction.type_transaction) %>
 </p>
+
+<p>
+  <strong>Nature:</strong>
+    <%= @client.type_nature(transaction.type_transaction) %>
+</p>
+
+<p>
+  <strong>Store owner:</strong>
+  <%= transaction.store_owner %>
+</p>
+
+<p>
+  <strong>Store name:</strong>
+  <%= transaction.store_name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= transaction.date %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= transaction.value %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= transaction.cpf %>
+</p>
+
+<p>
+  <strong>Card:</strong>
+  <%= transaction.card %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= transaction.hour %>
+</p>
+
+
+<% end %>
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>

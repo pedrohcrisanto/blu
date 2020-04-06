@@ -47,11 +47,11 @@ ActiveRecord::Schema.define(version: 2020_04_06_144631) do
     t.string "nature"
     t.string "store_owner"
     t.string "store_name"
-    t.date "date"
+    t.string "date"
     t.float "value"
     t.string "cpf"
     t.string "card"
-    t.time "hour"
+    t.string "hour"
     t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

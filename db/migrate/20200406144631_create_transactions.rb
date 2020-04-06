@@ -5,11 +5,11 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
       t.string :nature
       t.string :store_owner
       t.string :store_name
-      t.date :date
+      t.string :date
       t.float :value
       t.string :cpf
       t.string :card
-      t.time :hour
+      t.string :hour
       t.references :client, foreign_key: true
 
       t.timestamps
