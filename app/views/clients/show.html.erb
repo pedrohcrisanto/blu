@@ -1,56 +1,71 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Transações</h1>
+<div class="container">
+    <ul class="list-group">
+            <h2 class="text-center">Detalhes das Transações<h2>
 <% @client.transactions.each do |transaction| %>
-
+<br>
 <h2><strong> Transação <%=transaction.id %></strong></h2>
 <p>
-  <strong>Type transaction:</strong>
-  <%= @client.type_transaction(transaction.type_transaction) %>
+<li class="list-group-item">
+  <strong>Tipo transação:</strong>
+  <%= transaction.type_transaction %>
 </p>
-
+</li>
+<li class="list-group-item">
 <p>
   <strong>Nature:</strong>
-    <%= @client.type_nature(transaction.type_transaction) %>
+    <%= transaction.nature %>
 </p>
-
+</li>
+<li class="list-group-item">
 <p>
   <strong>Store owner:</strong>
   <%= transaction.store_owner %>
 </p>
-
+</li>
+<li class="list-group-item">
 <p>
   <strong>Store name:</strong>
   <%= transaction.store_name %>
 </p>
-
+</li>
+<li class="list-group-item">
 <p>
   <strong>Date:</strong>
   <%= transaction.date %>
 </p>
-
+</li>
+<li class="list-group-item">
 <p>
   <strong>Value:</strong>
   <%= transaction.value %>
 </p>
-
+</li>
+<li class="list-group-item">
 <p>
   <strong>Cpf:</strong>
   <%= transaction.cpf %>
 </p>
-
+</li>
+<li class="list-group-item">
 <p>
   <strong>Card:</strong>
   <%= transaction.card %>
 </p>
-
+</li>
+<li class="list-group-item">
 <p>
   <strong>Hour:</strong>
   <%= transaction.hour %>
 </p>
+</li>
 
 
 <% end %>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+</ul>
+<br>
+<%= link_to 'Editar', edit_client_path(@client) %> |
+<%= link_to 'Voltar', clients_path %>
+</div>
+

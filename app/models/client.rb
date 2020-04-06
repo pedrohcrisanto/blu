@@ -3,60 +3,67 @@ class Client < ApplicationRecord
     accepts_nested_attributes_for :transactions, allow_destroy: true
     has_one_attached :file
     after_create :save_bd
-    def file_path
-        ActiveStorage::Blob.service.path_for(file.key)
+    after_create :set_nature
+    after_create :set_type_transaction
+
+    def set_nature
+      self.transactions.each do |transaction|
+        case transaction.type_transaction
+        when "1"
+          transaction.update(nature: "Entrada")
+        when "2"
+          transaction.update(nature: "Saída")
+        when "3"
+          transaction.update(nature: "Saída")
+        when "4"
+          transaction.update(nature: "Entrada")
+        when "5"
+          transaction.update(nature: "Entrada")
+        when "6"
+          transaction.update(nature: "Entrada")
+        when "7"
+          transaction.update(nature: "Entrada")
+        when "8"
+          transaction.update(nature: "Entrada")
+        when "9"
+          transaction.update(nature: "Saída")
+        else
+          "Não possui natureza"
+        end
       end
+    end
+      
+    def file_path
+      ActiveStorage::Blob.service.path_for(file.key)
+    end
 
-    def type_transaction(type_transaction)
-        case type_transaction
+    def set_type_transaction
+      self.transactions.each do |transaction|
+        case transaction.type_transaction
         when "1"
-          "Débito"
+          transaction.update(type_transaction: "Débito")
         when "2"
-          "Boleto"
+          transaction.update(type_transaction: "Boleto")
         when "3"
-          "Financiamento"
+          transaction.update(type_transaction: "Financiamento")
         when "4"
-          "Crédito"
+          transaction.update(type_transaction: "Crédito")
         when "5"
-            "Recebimento Empréstimo"
+          transaction.update(type_transaction: "Recebimento Empréstimo")
         when "6"
-            "Vendas"
+          transaction.update(type_transaction: "Vendas")
         when "7"
-            "Recebimento TED"
+          transaction.update(type_transaction: "Recebimento TED")
         when "8"
-            "Recebimento Doc"
+          transaction.update(type_transaction: "Recebimento DOC")
         when "9"
-            "Aluguel"
+          transaction.update(type_transaction: "Aluguel")
         else
           "Não possui tipo"
         end
+      end
     end
 
-    def type_nature(type_transaction)
-        case type_transaction
-        when "1"
-          "Entrada"
-        when "2"
-          "Saída"
-        when "3"
-          "Saída"
-        when "4"
-          "Entrada"
-        when "5"
-            "Entrada"
-        when "6"
-            "Entrada"
-        when "7"
-            "Entrada"
-        when "8"
-            "Entrada"
-        when "9"
-            "Aluguel"
-        else
-          "Não possui tipo"
-        end
-    end
-    
     def read_txt
         File.readlines( self.file_path )
     end
