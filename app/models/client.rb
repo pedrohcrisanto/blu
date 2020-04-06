@@ -5,7 +5,20 @@ class Client < ApplicationRecord
     after_create :save_bd
     after_create :set_nature
     after_create :set_type_transaction
-
+    after_create :set_balance
+    def set_balance
+      total_entry = 0
+      total_output = 0
+      self.transactions.each do |transaction|
+        if transaction.nature == "Entrada"
+          total_entry += transaction.value
+        end
+        if transaction.nature == "Saída"
+          total_output += transaction.value
+        end
+      end
+      self.update(balance: total_entry - total_output)
+    end
     def set_nature
       self.transactions.each do |transaction|
         case transaction.type_transaction

@@ -2,6 +2,8 @@
 <div class="container">
     <ul class="list-group">
             <h2 class="text-center">Detalhes das Transações<h2>
+<h1>Balanço Total:</h1><%= @client.balance %>
+<br>
 <% @client.transactions.each do |transaction| %>
 <br>
 <h2><strong> Transação <%=transaction.id %></strong></h2>
